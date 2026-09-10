@@ -1,0 +1,6 @@
+{
+  "name": "Dubash Exim Academy - Academy of Global Trade",
+  "description": "Practical, industry-led training in Export-Import (EXIM) management, ICEGATE documentation, Incoterms 2020, and customs compliance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

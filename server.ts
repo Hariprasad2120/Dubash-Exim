@@ -1,0 +1,42 @@
+import express from 'express';
+import path from 'path';
+import { createServer as createViteServer } from 'vite';
+import contactRouter from './server/routes/contact';
+
+async function startServer() {
+  const app = express();
+  const PORT = 3000;
+
+  // Middleware for parsing JSON and form payloads
+  app.use(express.json());
+  app.use(express.urlencoded({ extended: true }));
+
+  // Health check endpoint
+  app.get('/api/health', (_req, res) => {
+    res.json({ status: 'ok', service: 'Dubash Exim Academy API', timestamp: new Date().toISOString() });
+  });
+
+  // Contact and Syllabus API endpoints
+  app.use('/api', contactRouter);
+
+  // Vite middleware for development vs static production serve
+  if (process.env.NODE_ENV !== 'production') {
+    const vite = await createViteServer({
+      server: { middlewareMode: true },
+      appType: 'spa',
+    });
+    app.use(vite.middlewares);
+  } else {
+    const distPath = path.join(process.cwd(), 'dist');
+    app.use(express.static(distPath));
+    app.get('*', (_req, res) => {
+      res.sendFile(path.join(distPath, 'index.html'));
+    });
+  }
+
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Dubash Exim Academy server running on http://0.0.0.0:${PORT}`);
+  });
+}
+
+startServer();
