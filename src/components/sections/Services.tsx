@@ -35,16 +35,16 @@ export const Services: React.FC = () => {
               className="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col border border-outline-variant/30"
             >
               {/* Module Header Bar */}
-              <div className="bg-primary-container p-space-md flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <span className="px-3 py-1.5 rounded bg-secondary text-on-secondary font-label-ui text-sm font-bold">
+              <div className="bg-primary-container p-space-md flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+                <div className="flex items-center gap-3 min-w-0">
+                  <span className="px-3 py-1.5 rounded bg-secondary text-on-secondary font-label-ui text-sm font-bold shrink-0">
                     {module.moduleNumber}
                   </span>
-                  <span className="font-headline-sm text-[1.45rem] text-on-primary uppercase font-semibold">
+                  <span className="font-headline-sm text-[1.35rem] lg:text-[1.45rem] text-on-primary uppercase font-semibold leading-tight">
                     Module {parseInt(module.moduleNumber, 10)}
                   </span>
                 </div>
-                <span className="font-label-ui text-sm text-tertiary-fixed-dim uppercase tracking-[0.14em] bg-surface-container-highest/20 px-3 py-1 rounded font-semibold">
+                <span className="w-fit max-w-full font-label-ui text-xs lg:text-sm text-tertiary-fixed-dim uppercase tracking-[0.14em] bg-surface-container-highest/20 px-3 py-1 rounded font-semibold leading-relaxed break-words">
                   {module.category}
                 </span>
               </div>
