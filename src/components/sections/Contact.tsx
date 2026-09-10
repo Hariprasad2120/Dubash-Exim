@@ -229,19 +229,19 @@ export const Contact: React.FC = () => {
                     <label className="font-label-ui text-label-ui text-on-surface font-semibold uppercase mb-2">
                       Current Profile *
                     </label>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                    <div className="grid grid-cols-1 2xl:grid-cols-3 gap-3 p-0.5">
                       {profileOptions.map((opt) => (
                         <button
                           key={opt}
                           type="button"
                           onClick={() => handleProfileSelect(opt)}
-                          className={`px-3 py-2.5 rounded text-left border text-body-sm transition-all flex items-center justify-between cursor-pointer ${
+                          className={`box-border px-4 py-3 rounded text-left border text-body-sm transition-all flex items-center justify-between gap-3 cursor-pointer min-w-0 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary ${
                             formData.profileType === opt
-                              ? 'border-secondary bg-surface-container-high text-on-surface font-semibold ring-1 ring-secondary'
+                              ? 'border-secondary bg-surface-container-high text-on-surface font-semibold ring-1 ring-inset ring-secondary'
                               : 'border-outline-variant bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-low'
                           }`}
                         >
-                          <span>{opt}</span>
+                          <span className="min-w-0 leading-relaxed">{opt}</span>
                           {formData.profileType === opt && (
                             <span className="w-2 h-2 rounded-full bg-secondary shrink-0" />
                           )}
@@ -291,8 +291,8 @@ export const Contact: React.FC = () => {
                     />
                   </div>
 
-                  {/* Phone Number and Course Dropdown */}
-                  <div className="grid grid-cols-1 2xl:grid-cols-2 gap-space-md">
+                  {/* Phone Number */}
+                  <div className="grid grid-cols-1 gap-space-md">
                     <Input
                       id="phone"
                       name="phone"
@@ -356,18 +356,19 @@ export const Contact: React.FC = () => {
                     {errors.countryCode && (
                       <span className="text-error text-body-sm mt-1">{errors.countryCode}</span>
                     )}
-
-                    <Select
-                      id="courseInterest"
-                      name="courseInterest"
-                      label="Interested Course"
-                      value={formData.courseInterest}
-                      onChange={handleChange}
-                      options={courseOptions}
-                      error={errors.courseInterest}
-                      required
-                    />
                   </div>
+
+                  {/* Course Dropdown */}
+                  <Select
+                    id="courseInterest"
+                    name="courseInterest"
+                    label="Interested Course"
+                    value={formData.courseInterest}
+                    onChange={handleChange}
+                    options={courseOptions}
+                    error={errors.courseInterest}
+                    required
+                  />
 
                   {/* Message Field */}
                   <Textarea
