@@ -201,7 +201,7 @@ export const Contact: React.FC = () => {
 
           {/* Right Form Column */}
           <div className="lg:col-span-6 bg-surface-container-lowest">
-            <div className="p-space-xl sm:p-space-2xl">
+            <div className="px-space-xl py-space-xl sm:px-space-3xl sm:py-space-2xl">
               <div className="relative overflow-hidden rounded-xl">
                 <AnimatePresence>
                   {submitStatus.type === 'success' && (

@@ -21,7 +21,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           id={id}
           ref={ref}
           required={required}
-          className={`w-full min-w-0 box-border px-3.5 py-2.5 rounded bg-surface-container-low text-on-surface placeholder:text-outline font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-secondary transition-all ${
+          className={`w-full min-w-0 box-border px-5 py-3 rounded bg-surface-container-low text-on-surface placeholder:text-outline font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary transition-all ${
             error ? 'border border-error ring-1 ring-error' : ''
           } ${className}`}
           {...props}
