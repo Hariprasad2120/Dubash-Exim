@@ -254,7 +254,7 @@ export const Contact: React.FC = () => {
                   </div>
 
                   {/* Name and Email Grid */}
-                  <div className="grid grid-cols-1 xl:grid-cols-2 gap-space-md">
+                  <div className="grid grid-cols-1 2xl:grid-cols-2 gap-space-md">
                     <Input
                       id="fullName"
                       name="fullName"
@@ -292,7 +292,7 @@ export const Contact: React.FC = () => {
                   </div>
 
                   {/* Phone Number and Course Dropdown */}
-                  <div className="grid grid-cols-1 xl:grid-cols-2 gap-space-md">
+                  <div className="grid grid-cols-1 2xl:grid-cols-2 gap-space-md">
                     <Input
                       id="phone"
                       name="phone"
@@ -318,7 +318,7 @@ export const Contact: React.FC = () => {
                             title={selectedCountry.country}
                             onClick={() => setIsCountryMenuOpen((isOpen) => !isOpen)}
                             onBlur={() => window.setTimeout(() => setIsCountryMenuOpen(false), 120)}
-                            className="w-24 box-border px-3 py-3 rounded bg-surface-container text-on-surface-variant font-label-ui text-label-ui font-semibold border border-outline-variant/30 focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-secondary flex items-center justify-between shrink-0"
+                            className="w-28 box-border px-4 py-3 rounded bg-surface-container text-on-surface-variant font-label-ui text-label-ui font-semibold border border-outline-variant/30 focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary flex items-center justify-between shrink-0"
                           >
                             <span>{selectedCountry.code}</span>
                             <ChevronDown className="w-4 h-4 text-outline shrink-0" />
