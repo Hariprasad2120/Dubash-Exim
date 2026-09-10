@@ -14,7 +14,7 @@ export interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElemen
 export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
   ({ label, options, error, id, required, className = '', ...props }, ref) => {
     return (
-      <div className="flex flex-col">
+      <div className="flex flex-col min-w-0">
         {label && (
           <label
             htmlFor={id}
@@ -27,7 +27,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
           id={id}
           ref={ref}
           required={required}
-          className={`w-full px-3.5 py-3 rounded bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-secondary transition-all ${
+          className={`w-full min-w-0 box-border px-3.5 py-3 rounded bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-secondary transition-all ${
             error ? 'border border-error ring-1 ring-error' : ''
           } ${className}`}
           {...props}
